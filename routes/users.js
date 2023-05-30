@@ -11,7 +11,7 @@ const { index,
        requestotp, verifyotp, logout,
         addtocart, changeproductquantity,
          removeproduct, checkout ,productpage,address,saveaddress,getaddress,placeorder,applycoupon,vieworder,viewshop,
-        orderplaced,verifypayment} = require('../controller/userController');
+        orderplaced,verifypayment,returnorder,cancelorder} = require('../controller/userController');
 const userHelper = require('../helpers/user-helpers');
 
 
@@ -39,8 +39,10 @@ router.post('/getaddress',getaddress);
 router.post('/applycoupon',applycoupon);
 router.get('/vieworders',vieworder);
 router.get('/shop',viewshop);
-router.get('/orderplaced',orderplaced);
-router.post('/verifypayment',verifypayment)
+router.get('/orderplaced',orderplaced);;
+router.get('/returnorder:id',returnorder)
+router.post('/verifypayment',verifypayment);
+router.get('/cancelorder:id',cancelorder)
 
 
 

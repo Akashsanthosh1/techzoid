@@ -4,7 +4,7 @@ var {signup,userlogin,Verifyemail,
     OTPsend,getproducts,Addtocart,  
     Changeproductquantity,Removeproduct,
     getproductdetails, getcartcount,saveaddress,getaddress,
-    Getaddress,couponapply,saveorder,listorder,allproducts,razorpay,VerifyPayment}=require('../helpers/user-helpers')
+    Getaddress,couponapply,saveorder,listorder,allproducts,razorpay,VerifyPayment,orderreturn,ordercancel}=require('../helpers/user-helpers')
 var db=require('../config/connection')
 var userModel=require('../models/user-models')
 const bcrypt=require("bcrypt")
@@ -309,7 +309,20 @@ verifypayment:(req,res)=>{
         }).catch((err)=>{
           res.json({status:false})
         })
-  }
+  },
+returnorder:(req,res)=>{
+    const id=req.params.id
+    orderreturn(id).then(()=>{
+        res.redirect('/vieworders')
+    })
+
+},
+cancelorder:(req,res)=>{
+    const id=req.params.id
+    ordercancel(id).then(()=>{
+        res.redirect('/vieworders')
+    })
+}    
 
 
 }

@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const db=mongoose.connection;
 
-mongoose.connect("mongodb://0.0.0.0:27017/testdb", {
+mongoose.connect("mongodb+srv://akashsanthosh271:Akashs%401999@cluster0.zotbq5s.mongodb.net/testdb", {
   useNewUrlParser: "true",
   useUnifiedTopology:"true"
 })

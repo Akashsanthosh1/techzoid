@@ -128,7 +128,6 @@ statuschange:(req,res)=>{
     let orderid=req.body.orderid
     let status=req.body.status
     changestatus(orderid,status).then((response)=>{
-       
         res.json(response) 
     })
 }

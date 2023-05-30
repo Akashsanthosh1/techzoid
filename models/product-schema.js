@@ -12,10 +12,7 @@ var productSchema=new mongoose.Schema({
         required:true,
         unique:true
     },
-    brand:{
-        type:String,
-        required:true
-    },
+    
     price:{
         type:String,
         required:true

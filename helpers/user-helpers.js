@@ -463,6 +463,18 @@ return new Promise(async(resolve, reject) => {
         reject();
    }
 });
+},
+orderreturn:(id)=>{
+return new Promise(async(resolve, reject) => {
+  await orderschema.findByIdAndUpdate(id,{'deliveredto.status':'returned'})
+  resolve()
+})
+},
+ordercancel:(id)=>{
+  return new Promise(async(resolve, reject) => {
+    await orderschema.findByIdAndUpdate(id,{'deliveredto.status':'cancelled'})
+    resolve()
+  })
 }
   
 

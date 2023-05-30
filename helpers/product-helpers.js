@@ -117,7 +117,7 @@ module.exports={
         return new Promise(async(resolve, reject) => {
         await orderSchema.updateOne({_id:id},{"deliveredto.status":status})
         let order=await orderSchema.findById(id)
-             console.log("chappppandi",order);
+             console.log("updated status order",order);
             resolve(order)
            
           

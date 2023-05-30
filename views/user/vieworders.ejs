@@ -53,10 +53,15 @@
                                                 </div><!-- End .cart-product-quantity -->
                                             </td>
                                             <td class="status-col"><%=data.deliveredto.status%></td>
-
-                                            <td>
+                                            <% if (data.deliveredto.status=='delivered') { %>
+                                                <td><a href="/returnorder<%=data._id%>">Return</a></td>
+                                              <% }else if(data.deliveredto.status=='cancelled'||data.deliveredto.status=='returned'){%>
                                                 
-                                            </td>
+                                              <%}else{%>
+                                                <td><a href="/cancelorder<%=data._id%>">Cancel Order</a></td>
+                                             <% } %>
+                                              
+                                            
 
 											
 										</tr>
