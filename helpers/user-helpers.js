@@ -12,15 +12,16 @@ const addressSchema = require('../models/address-schema')
 const { address } = require('../controller/userController')
 const couponSchema = require('../models/coupon-schema')
 const orderschema=require('../models/order-schema')
+require('dotenv').config()
 //otpverify
-const accountSid = 'AC8301ba1fdcc2a532c9e25cdf5e12962e';
-const authToken = '66766d6cbbabb386bc709e8263c0a79c';
+const accountSid = process.env.twilio_accountSid;
+const authToken = process.env.twilio_authToken;
 const client = require('twilio')(accountSid, authToken);
 //razorpay
 const Razorpay = require('razorpay')
 var instance = new Razorpay({
-  key_id: 'rzp_test_6P6QVkW7TyTLjP',
-  key_secret: '1oX2pJ43Q3WTkUf5wo9PxjoB',
+  key_id: process.env.razorpay_key_id,
+  key_secret: process.env.razorpay_key_secret,
 });
 
 

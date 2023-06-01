@@ -42,8 +42,6 @@ router.get('/shop',viewshop);
 router.get('/orderplaced',orderplaced);;
 router.get('/returnorder:id',returnorder)
 router.post('/verifypayment',verifypayment);
-router.get('/cancelorder:id',cancelorder)
-
-
+router.get('/cancelorder:id',cancelorder);
 
 module.exports = router;
